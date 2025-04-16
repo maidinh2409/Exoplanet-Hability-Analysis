@@ -17,8 +17,11 @@ class UploadGCloud:
         # object that does not yet exist, set the if_generation_match precondition to 0.
         # If the destination object already exists in your bucket, set instead a
         # generation-match precondition using its generation number.
-        json_data = json.dumps(data, ensure_ascii=False, indent=4)
-        blob.upload_from_string(json_data)
+
+        ndjson_lines = "\n".join([json.dumps(record, ensure_ascii=False) for record in data])
+
+        # Upload to GCS
+        blob.upload_from_string(ndjson_lines)
         
         print(
             f"File {data} uploaded to {destination_blob_name}."
