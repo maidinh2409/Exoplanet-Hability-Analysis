@@ -1,8 +1,12 @@
-# Predicting Collision Risk and Economic Value of Near-Earth Objects
+# Exoplanet-Habitability-Analysis
 
+## PHASE 1: PLANNING
+### Flowchart
+![image](https://github.com/user-attachments/assets/31cd241a-7d75-49fd-a8a7-381a9d262716)
 
-## Flowchart
-![image](https://github.com/user-attachments/assets/f272808e-3e5f-439a-a36d-1b4d58836a9b)
+### Sequence Diagram
+![image](https://github.com/user-attachments/assets/0a27865c-9a47-4068-ba3f-632ab6ef102b)
 
-## Sequence Diagram
-![image](https://github.com/user-attachments/assets/5908b26f-7afd-4f2c-b4d6-0857dbaa0e47)
+### Data Schema Design - Snowflake Schema
+![Data Schema Design (2)](https://github.com/user-attachments/assets/c6f68d8c-6d36-44a3-b3b6-b609d256544d)
+
