@@ -26,17 +26,17 @@ To investigate planetary habitability through the lens of data science—leverag
 ## PHASE 1: PLANNING
 ### Flowchart
 
-<ins>🔹 Stage 1: Data Ingestion & Storage</ins>
+🔹 <ins>Stage 1: Data Ingestion & Storage</ins>
 
 * Retrieved raw planetary data from two public sources: Asterank API (Kepler) and NASA Exoplanet Archive using Python scripts.
 * Designed a structured schema and uploaded the raw data to Google Cloud Storage, preparing it for scalable analysis.
 
-<ins>🔹 Stage 2: ELT Pipeline & Data Transformation</ins>
+🔹 <ins>Stage 2: ELT Pipeline & Data Transformation</ins>
 
 * Cleaned and standardized the data through feature engineering and quality checks.
 * Loaded data into Google BigQuery and performed transformations using dbt, resulting in enriched and analysis-ready tables.
 
-<ins>🔹 Stage 3: Modeling & Insight Delivery</ins>
+🔹 <ins>Stage 3: Modeling & Insight Delivery</ins>
 
 * Built an ML pipeline using models like XGBoost and Random Forest to classify planets as potentially habitable -> Evaluated model performance and exported predictions.
 * Simultaneously, created a Power BI dashboard to visualize trends and relationships from the transformed dataset.
