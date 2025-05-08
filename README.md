@@ -26,22 +26,20 @@ To investigate planetary habitability through the lens of data science—leverag
 ## PHASE 1: PLANNING
 ### Flowchart
 
-**1. Data Extraction:**
-I began by querying astronomical data from the NASA Exoplanet Archive and Asterank API, integrating multiple sources into a centralized data lake. This phase emphasized handling API data, structuring inconsistent fields, and preparing the data for analytical use.
+🔹 Stage 1: Data Ingestion & Storage
 
-**2. ELT (Extract, Load, Transform)**
+* Retrieved raw planetary data from two public sources: Asterank API (Kepler) and NASA Exoplanet Archive using Python scripts.
+* Designed a structured schema and uploaded the raw data to Google Cloud Storage, preparing it for scalable analysis.
 
-* Using Google BigQuery as the data warehouse and dbt for transformation logic, I implemented a modular ELT pipeline. Here, I applied:
-* Standardization of planetary metrics (e.g. mass, radius, orbital period)
-* Feature engineering to derive habitability-relevant features
-* Data validation tests to ensure pipeline integrity
+🔹 Stage 2: ELT Pipeline & Data Transformation
 
-**3. Product Deployment & Insights**
-For the final stage, I delivered two outputs:
+* Cleaned and standardized the data through feature engineering and quality checks.
+* Loaded data into Google BigQuery and performed transformations using dbt, resulting in enriched and analysis-ready tables.
 
-<ins>Business Intelligence Dashboard (Power BI):</ins> Visualized planetary patterns, economic potential, and the proportion of planets falling into high-habitability zones. Enabled filtering by star type, distance from Earth, and potential value.
+🔹 Stage 3: Modeling & Insight Delivery
 
-<ins>Machine Learning Model (Python):</ins> Built a logistic regression and XGBoost model to classify planets as “Potentially Habitable” or “Non-Habitable” using astrophysical features. Evaluated on precision, recall, and F1-score.
+* Built an ML pipeline using models like XGBoost and Random Forest to classify planets as potentially habitable -> Evaluated model performance and exported predictions.
+* Simultaneously, created a Power BI dashboard to visualize trends and relationships from the transformed dataset.
 
 ![image](https://github.com/user-attachments/assets/2a44f309-00b3-44c4-b617-9bc92ad19f81)
 
