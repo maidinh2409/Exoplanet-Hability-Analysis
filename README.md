@@ -2,6 +2,8 @@
 
 ## PROJECT OVERVIEW
 
+![image](https://github.com/user-attachments/assets/912935a7-0b9c-4bda-90e2-2f38da488d69)
+
 This project represents a full end-to-end data science pipeline designed to assess the potential habitability of exoplanets — from raw data extraction to the deployment of an ML-based classification tool. Inspired by NASA’s public datasets, I structured the workflow into three distinct yet connected stages:
 
 **1. Data Extraction**
