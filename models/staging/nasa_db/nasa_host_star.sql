@@ -55,19 +55,34 @@ mean_val as (
 fill_null as (
     select
         filter_null.star_id,
-        ifnull(star_type, "None") as star_type,
+        filter_null.star_name,
         ifnull(temperature, m.avg_temp) as temperature,
         ifnull(radius, m.avg_radius) as radius,
         ifnull(mass, m.avg_mass) as mass,
+        ifnull(metalicity, m.avg_metalicity) as metalicity,
         ifnull(luminosity, m.avg_luminosity) as luminosity,
         ifnull(spectral_type, "None") as spectral_type,
         ifnull(luminosity_class, "None") as luminosity_class,
         ifnull(SAFE_CAST(subclass AS FLOAT64), 0) as subclass
     from filter_null
     cross join mean_val as m
+),
+
+
+remove_duplicate_id as (
+    select 
+        *
+    from fill_null
+    where star_id in (
+        select
+            star_id
+        from fill_null
+        group by star_id
+        having count(star_id) = 1
+    )
 )
 
 /* Final transformation */
-select 
+select distinct
     *
-from fill_null
+from remove_duplicate_id
