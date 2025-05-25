@@ -43,7 +43,7 @@ fill_null_age as (
         s.planet_id, 
         s.planet_name,
         ifnull(s.age, m.mean_age) as age,
-        s.star_id,
+        ifnull(s.star_id, 'NOT FOUND') as star_id,
         s.detection_id,
         ifnull(s.mass, m.mean_mass) as mass,
         ifnull(s.radius, m.mean_radius) as radius,
