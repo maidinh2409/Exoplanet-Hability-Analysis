@@ -6,19 +6,36 @@ source as (
         nasa.planet_id,
         nasa.pl_name as planet_name,
         nasa.st_age as age,
-        nasa.star_id,
-        nasa.detection_id, 
+        hoststar.star_id,
+        detection.detection_id, 
+        nasa.pl_masse as mass,
+        nasa.pl_rade as radius,
+        nasa.pl_dens as density,
+        nasa.pl_eqt as t_eq,
+        nasa.pl_insol as flux,
+        nasa.pl_orbsmax as distance_to_star,
+        nasa.pl_orbper as period,
         cast(null as boolean) as isHabitable
     from {{ref("nasa")}} as nasa
-    full outer join {{ref("nasa_host_star")}} as hoststar on hoststar.star_id = nasa.star_id
+    left join {{ref("nasa_host_star")}} as hoststar on hoststar.star_id = nasa.star_id
+    left join {{ref("nasa_detection_fact")}} as detection on detection.detection_id = nasa.detection_id
 ),
 
 /*Compute mean value for age column to fill null values */
 mean_val as (
     select
-        avg(age) as mean_age
+        avg(age) as mean_age,
+        avg(mass) as mean_mass,
+        avg(radius) as mean_radius,
+        avg(density) as mean_density,
+        avg(t_eq) as mean_t_eq,
+        avg(flux) as mean_flux,
+        avg(distance_to_star) as mean_distance,
+        avg(period) as mean_period
     from source
 ),
+
+
 
 /*Fill null values of age column with mean */
 fill_null_age as (
@@ -28,7 +45,14 @@ fill_null_age as (
         ifnull(s.age, m.mean_age) as age,
         s.star_id,
         s.detection_id,
-        s.isHabitable
+        ifnull(s.mass, m.mean_mass) as mass,
+        ifnull(s.radius, m.mean_radius) as radius,
+        ifnull(s.density, m.mean_density) as density,
+        ifnull(s.t_eq, m.mean_t_eq) as t_eq,
+        ifnull(s.flux, m.mean_flux) as flux,
+        ifnull(s.distance_to_star, m.mean_distance) as distance_to_star,
+        ifnull(s.period, m.mean_period) as period,
+        ifnull(s.isHabitable, FALSE) AS isHabitable
     from source as s
     cross join mean_val as m
 )

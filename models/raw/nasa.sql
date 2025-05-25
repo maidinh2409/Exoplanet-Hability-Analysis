@@ -16,25 +16,25 @@ spectype_cleaned as (
 
 select
     concat(
-        replace(pl_name, ' ', ''), 
-        replace(hostname, ' ', '')
+        UPPER(replace(pl_name, ' ', '')), 
+        UPPER(replace(hostname, ' ', ''))
     ) as planet_id,
 
-    concat(
-        'FET', 
-        replace(pl_name, ' ', ''), 
-        replace(hostname, ' ', '')
-    ) as feature_id,
+    CONCAT(
+            UPPER(REPLACE(disc_facility, ' ', '')), 
+            UPPER(REPLACE(disc_locale, ' ', ''))
+        ) as facility_id,
 
     concat(
-        replace(hostname, ' ', ''), 
-        spectype
+        UPPER(replace(hostname, ' ', '')), 
+        UPPER(spectype)
     ) as star_id,
 
-    concat(
+    UPPER(concat(
         replace(pl_name, ' ', ''), 
-        replace(disc_facility, ' ', '')
-    ) as detection_id,
+        replace(disc_facility, ' ', ''),
+        disc_year
+    )) as detection_id,
 
     *
 from spectype_cleaned
