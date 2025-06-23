@@ -41,7 +41,8 @@ To investigate planetary habitability through the lens of data science—leverag
 * Built an ML pipeline using models like XGBoost and Random Forest to classify planets as potentially habitable -> Evaluated model performance and exported predictions.
 * Simultaneously, created a Power BI dashboard to visualize trends and relationships from the transformed dataset.
 
-![image](https://github.com/user-attachments/assets/2a44f309-00b3-44c4-b617-9bc92ad19f81)
+![image](![image](https://github.com/user-attachments/assets/baaa8dec-bb6e-4ea3-948d-d825adbfa2e4)
+)
 
 ### Data Schema Design - Snowflake Schema
 ![Data Schema Design (2)](https://github.com/user-attachments/assets/c6f68d8c-6d36-44a3-b3b6-b609d256544d)
