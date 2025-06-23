@@ -16,8 +16,8 @@ spectype_cleaned as (
 
 select
     concat(
-        UPPER(replace(pl_name, ' ', '')), 
-        UPPER(replace(hostname, ' ', ''))
+        UPPER(replace(replace(replace(pl_name, '+', ''), '-',''), ' ', '')), 
+        UPPER(replace(replace(replace(hostname, '+', ''), '-',''), ' ', ''))
     ) as planet_id,
 
     CONCAT(
