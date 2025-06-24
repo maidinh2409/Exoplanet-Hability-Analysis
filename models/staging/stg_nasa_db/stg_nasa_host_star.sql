@@ -10,7 +10,7 @@ source as (
         st_mass as mass,
         st_met as metalicity,
         st_lum as luminosity
-    from {{ref("nasa")}}
+    from {{ref("raw_nasa_db")}}
 ),
 
 /* Split star_type into 3 subcolumns */
