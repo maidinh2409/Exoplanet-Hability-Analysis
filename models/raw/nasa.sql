@@ -20,6 +20,8 @@ select
         UPPER(replace(replace(replace(hostname, '+', ''), '-',''), ' ', ''))
     ) as planet_id,
 
+    UPPER(replace(replace(replace(pl_name, '+', ''), '-',''), ' ', '')) as planet_id_without_star,
+
     CONCAT(
             UPPER(REPLACE(disc_facility, ' ', '')), 
             UPPER(REPLACE(disc_locale, ' ', ''))
