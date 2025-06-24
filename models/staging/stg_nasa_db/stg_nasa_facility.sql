@@ -8,7 +8,7 @@ source as (
         ) as facility_id,
         s.disc_facility as facility_name,
         s.disc_locale as location
-    from {{ref("nasa")}} as s
+    from {{ref("raw_nasa_db")}} as s
 
 )
 

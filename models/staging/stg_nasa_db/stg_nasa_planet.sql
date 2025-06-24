@@ -16,9 +16,9 @@ source as (
         nasa.pl_orbsmax as distance_to_star,
         nasa.pl_orbper as period,
         cast(null as boolean) as isHabitable
-    from {{ref("nasa")}} as nasa
-    left join {{ref("nasa_host_star")}} as hoststar on hoststar.star_id = nasa.star_id
-    left join {{ref("nasa_detection_fact")}} as detection on detection.detection_id = nasa.detection_id
+    from {{ref("raw_nasa_db")}} as nasa
+    left join {{ref("stg_nasa_host_star")}} as hoststar on hoststar.star_id = nasa.star_id
+    left join {{ref("stg_nasa_detection_fact")}} as detection on detection.detection_id = nasa.detection_id
 ),
 
 /*Compute mean value for age column to fill null values */

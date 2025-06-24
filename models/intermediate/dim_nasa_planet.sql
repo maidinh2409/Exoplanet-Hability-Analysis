@@ -3,7 +3,7 @@ with
 nasa_staging as (
     select
         *
-    from {{ref("nasa_planet")}}
+    from {{ref("stg_nasa_planet")}}
 
 ),
 
