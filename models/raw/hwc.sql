@@ -8,12 +8,12 @@ distinct_val as (
 ),
 
 id_tb as (
-    select 
-        *,
+    select
         concat(
             UPPER(replace(replace(replace(P_NAME, '+', ''), '-',''), ' ', '')), 
             UPPER(replace(replace(replace(S_NAME, '+', ''), '-',''), ' ', ''))
-    ) as planet_id
+    ) as planet_id, 
+        *
     from distinct_val
 )
 
