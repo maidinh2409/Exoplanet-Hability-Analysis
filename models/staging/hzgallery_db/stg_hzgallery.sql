@@ -9,14 +9,14 @@ source as (
 habit_column as (
     select
         *,
-        cast(null as boolean) as isHabitable_null
+        cast(null as INTEGER) as isHabitable_null
     from source
 ),
 
 fill_null as(
     select
         *,
-        ifnull(isHabitable_null, true) AS isHabitable
+        ifnull(isHabitable_null, 1) AS isHabitable
     from habit_column
 )
 

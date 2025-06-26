@@ -4,6 +4,7 @@ with
 source as (
     select
         nasa.planet_id,
+        nasa.planet_id_without_star,
         nasa.pl_name as planet_name,
         nasa.st_age as age,
         hoststar.star_id,
@@ -15,7 +16,7 @@ source as (
         nasa.pl_insol as flux,
         nasa.pl_orbsmax as distance_to_star,
         nasa.pl_orbper as period,
-        cast(null as boolean) as isHabitable
+        cast(null as INTEGER) as isHabitable
     from {{ref("raw_nasa_db")}} as nasa
     left join {{ref("stg_nasa_host_star")}} as hoststar on hoststar.star_id = nasa.star_id
     left join {{ref("stg_nasa_detection_fact")}} as detection on detection.detection_id = nasa.detection_id
@@ -41,6 +42,7 @@ mean_val as (
 fill_null_age as (
     select
         s.planet_id, 
+        s.planet_id_without_star,
         s.planet_name,
         ifnull(s.age, m.mean_age) as age,
         ifnull(s.star_id, 'NOT FOUND') as star_id,
@@ -52,7 +54,7 @@ fill_null_age as (
         ifnull(s.flux, m.mean_flux) as flux,
         ifnull(s.distance_to_star, m.mean_distance) as distance_to_star,
         ifnull(s.period, m.mean_period) as period,
-        ifnull(s.isHabitable, FALSE) AS isHabitable
+        ifnull(s.isHabitable, 0) AS isHabitable
     from source as s
     cross join mean_val as m
 )
