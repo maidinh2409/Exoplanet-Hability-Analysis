@@ -1,4 +1,4 @@
-# Exoplanet-Habitability-Analysis
+![image](https://github.com/user-attachments/assets/7c852ef9-f792-4679-a866-da6d25c3c8ce)# Exoplanet-Habitability-Analysis
 
 ![image](https://github.com/user-attachments/assets/912935a7-0b9c-4bda-90e2-2f38da488d69)
 
@@ -44,5 +44,7 @@ To investigate planetary habitability through the lens of data science—leverag
 ![image](https://github.com/user-attachments/assets/9fd14455-cac4-4315-bed5-381b74ad4f6b)
 
 ### Data Schema Design - Snowflake Schema
-![Data Schema Design (2)](https://github.com/user-attachments/assets/c6f68d8c-6d36-44a3-b3b6-b609d256544d)
+
+![image](https://github.com/user-attachments/assets/b58b1960-a929-4638-9be0-3ea890373c67)
+
 
