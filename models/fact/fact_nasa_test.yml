@@ -1,0 +1,25 @@
+version: 2
+
+unit_tests:
+  - name: test_compute_isHabitable
+    model: fact_nasa_planet
+
+    given:
+      - input: ref('dim_nasa_planet')
+        rows:
+          - planet_id: "KEPLER456"
+            planet_id_without_star: "KEPLER456"
+      - input: ref('raw_hwc')
+        rows:
+          - planet_id: "KEPLER456"
+            P_HABITABLE: 1
+
+      - input: ref('stg_hzgallery')
+        rows:
+          - planet_id_without_star: "KEPLER456"
+            isHabitable: 1
+
+    expect:
+      rows:
+        - planet_id: "KEPLER456"
+          isHabitable: 1
