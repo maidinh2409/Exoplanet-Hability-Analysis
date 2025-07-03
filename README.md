@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/7c852ef9-f792-4679-a866-da6d25c3c8ce)# Exoplanet-Habitability-Analysis
+# Exoplanet-Habitability-Analysis
 
 ![image](https://github.com/user-attachments/assets/912935a7-0b9c-4bda-90e2-2f38da488d69)
 
