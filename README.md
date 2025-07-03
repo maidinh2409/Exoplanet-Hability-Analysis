@@ -4,7 +4,7 @@
 
 ## PROJECT OVERVIEW
 
-What makes a planet potentially habitable? This question inspired the development of a full end-to-end data science pipeline focused on exoplanets beyond our solar system. From scraping raw astronomical data to deploying a machine learning model, this project simulates a real-world data science workflow—bridging scientific curiosity with technical execution.
+What makes a planet potentially habitable? This question inspired the development of a full end-to-end data science pipeline focused on exoplanets beyond our solar system. 
 
 Starting with publicly available datasets from the NASA Exoplanet Archive and Asterank API, I built a robust data pipeline to clean, transform, and model planetary features. Using tools like dbt and BigQuery, the raw data was turned into structured insights, enabling deeper analysis of planetary systems.
 
