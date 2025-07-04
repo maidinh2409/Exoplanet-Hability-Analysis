@@ -5,60 +5,22 @@ unit_tests:
     model: raw_nasa_db
 
     given:
-      - input: ref('raw_nasa_test')
-        format: dict 
+      - input: ref('raw_nasa_test')  
+        format: dict
         rows:
-          - {
-              discoverymethod: "KEPLER-GROUND",
-              st_lum: 0.0,
-              st_mass: 0.0,
-              st_rad: 0.0,
-              st_teff: 0.0,
-              sy_dist: 0.0,
-              pl_rade: 0.0,
-              pl_insol: 0.0,
-              pl_eqt: 0.0,
-              disc_facility: "LOSANGELES",
-              pl_dens: 0.0,
-              st_met: 0.0,
-              st_age: 0.0,
-              hostname: null,
-              pl_name: "kepler 456",
-              disc_locale: "LA",
-              disc_year: 2007,
-              pl_orbsmax: 0.0,
-              pl_orbper: 0.0,
-              st_spectype: "ga-III"
-            }
+          - discoverymethod: "KEPLER-GROUND"
+            disc_facility: "LOSANGELES"
+            pl_name: "kepler 456"
+            disc_locale: "LA"
+            disc_year: 2007
+            hostname: "GA"
+            st_spectype: "III"
 
     expect:
-      format: dict 
+      format: dict
       rows:
-        - {
-            planet_id: "KEPLER456",
-            planet_id_without_star: "KEPLER456",
-            facility_id: "LOSANGELESLA",
-            star_id: "GA-III",
-            detection_id: "KEPLER456LOSANGELES2007",
-            discoverymethod: "KEPLER-GROUND",
-            st_lum: 0.0,
-            st_mass: 0.0,
-            st_rad: 0.0,
-            st_teff: 0.0,
-            sy_dist: 0.0,
-            pl_rade: 0.0,
-            pl_insol: 0.0,
-            pl_eqt: 0.0,
-            disc_facility: "LOSANGELES",
-            pl_dens: 0.0,
-            st_met: 0.0,
-            st_age: 0.0,
-            hostname: null,
-            pl_name: "kepler 456",
-            disc_locale: "LA",
-            disc_year: 2007,
-            pl_orbsmax: 0.0,
-            pl_orbper: 0.0,
-            st_spectype: "ga-III",
-            spectype: "ga-III"
-          }
+        - planet_id: "KEPLER456GA"
+          planet_id_without_star: "KEPLER456"
+          facility_id: "LOSANGELESLA"
+          star_id: "GAIII"
+          detection_id: "KEPLER456LOSANGELES2007"

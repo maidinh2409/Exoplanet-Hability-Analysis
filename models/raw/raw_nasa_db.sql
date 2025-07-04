@@ -1,6 +1,6 @@
 with distinct_val as (
     select distinct *
-    from `asteroid-db-456716.exoplanet_habitability_db.nasa_exoplanet_pl_2`
+    from  `asteroid-db-456716.exoplanet_habitability_db.nasa_exoplanet_pl_2`
 ),
 
 spectype_cleaned as (
