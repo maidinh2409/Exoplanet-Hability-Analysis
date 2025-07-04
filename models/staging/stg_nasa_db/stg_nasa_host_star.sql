@@ -47,7 +47,8 @@ mean_val as (
         AVG(radius) as avg_radius,
         AVG(mass) as avg_mass,
         AVG(metalicity) as avg_metalicity,
-        AVG(luminosity) as avg_luminosity
+        AVG(luminosity) as avg_luminosity,
+        AVG(earth_to_system) as avg_earth_to_system
     from filter_null
 ),
 
@@ -57,6 +58,7 @@ fill_null as (
     select
         filter_null.star_id,
         filter_null.star_name,
+        ifnull(earth_to_system, m.avg_earth_to_system) as earth_to_system,
         ifnull(temperature, m.avg_temp) as temperature,
         ifnull(radius, m.avg_radius) as radius,
         ifnull(mass, m.avg_mass) as mass,
