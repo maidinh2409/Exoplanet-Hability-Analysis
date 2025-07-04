@@ -18,9 +18,7 @@ rank_table as (
 )
 
 select
-    planet_name,
-    earth_similarity_score,
-    habitability_ranking
+    *
 from rank_table
 where habitability_ranking <= 10
 order by habitability_ranking
