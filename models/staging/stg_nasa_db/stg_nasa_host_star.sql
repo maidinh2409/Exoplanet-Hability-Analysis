@@ -4,6 +4,7 @@ source as (
     select
         star_id,
         hostname as star_name,
+        sy_dist as earth_to_system,
         st_spectype as star_type,
         st_teff as temperature,
         st_rad as radius,

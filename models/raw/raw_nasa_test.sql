@@ -4,6 +4,7 @@ select
     0.0 as st_mass,
     0.0 as st_rad,
     0.0 as st_teff,
+    0.0 as sy_dist,
     0.0 as pl_rade,
     0.0 as pl_insol,
     0.0 as pl_eqt,
