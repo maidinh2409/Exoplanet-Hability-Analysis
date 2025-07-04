@@ -16,7 +16,7 @@ source as (
         nasa.pl_insol as flux,
         nasa.pl_orbsmax as distance_to_star,
         nasa.pl_orbper as period,
-        cast(null as INTEGER) as isHabitable
+        cast(null as INTEGER) as habitable_score
     from {{ref("raw_nasa_db")}} as nasa
     left join {{ref("stg_nasa_host_star")}} as hoststar on hoststar.star_id = nasa.star_id
     left join {{ref("stg_nasa_detection_fact")}} as detection on detection.detection_id = nasa.detection_id
@@ -54,7 +54,7 @@ fill_null_age as (
         ifnull(s.flux, m.mean_flux) as flux,
         ifnull(s.distance_to_star, m.mean_distance) as distance_to_star,
         ifnull(s.period, m.mean_period) as period,
-        ifnull(s.isHabitable, 0) AS isHabitable
+        ifnull(s.habitable_score, 0) AS habitable_score
     from source as s
     cross join mean_val as m
 )

@@ -12,9 +12,9 @@ unit_tests:
       - input: ref('raw_hwc')
         rows:
           - planet_id: "KEPLER456"
-            P_HABITABLE: 1
+            P_HABITABLE: 2
 
-      - input: ref('stg_hzgallery')
+      - input: ref('dim_hzgallery')
         rows:
           - planet_id_without_star: "KEPLER456"
             isHabitable: 1
@@ -22,4 +22,4 @@ unit_tests:
     expect:
       rows:
         - planet_id: "KEPLER456"
-          isHabitable: 1
+          habitable_score: 1.667
