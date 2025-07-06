@@ -71,21 +71,24 @@ fill_null as (
     cross join mean_val as m
 ),
 
-
-remove_duplicate_id as (
-    select 
-        *
+row_number_table as (
+    select
+        *,
+        row_number() over (partition by star_id order by radius) as row_number
     from fill_null
-    where star_id in (
-        select
-            star_id
-        from fill_null
-        group by star_id
-        having count(star_id) = 1
-    )
 )
 
-/* Final transformation */
-select distinct
-    *
-from remove_duplicate_id
+select 
+    star_id,
+    star_name,
+    earth_to_system,
+    temperature,
+    radius,
+    mass,
+    metalicity,
+    luminosity,
+    spectral_type,
+    luminosity_class, 
+    subclass
+from row_number_table
+where row_number = 1
