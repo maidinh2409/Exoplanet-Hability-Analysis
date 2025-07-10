@@ -130,9 +130,9 @@ Performed feature engineering, such as:
 | **Period**                   | Orbital period: how long the planet takes to complete one orbit around its host star (in Earth days). |
 | **ESI (Earth Similarity Index)** | Score from 0 to 100 indicating how similar a planet is to Earth in terms of physical conditions. |
 | **Spectral Type (M, K, G)**  | Stellar classification based on temperature and light:  
-- **M**: red dwarfs, small and cool, most common  
-- **K**: orange stars, warmer than M-type  
-- **G**: yellow stars like the Sun |
+* **M**: red dwarfs, small and cool, most common
+* **K**: orange stars, warmer than M-type
+* **G**: yellow stars like the Sun |
   
 - **Optimistic / Conservative** | Labels from the HWC dataset representing habitability likelihood:  
   + **Optimistic**: broader zone, more relaxed criteria (water worlds or mini-Neptunes, with a lower likelihood of habitable conditions)
