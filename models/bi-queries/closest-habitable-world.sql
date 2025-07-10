@@ -22,7 +22,6 @@ rank_distance as (
 )
 
 select 
-    planet_name,
-    light_year_distance
+    *
 from rank_distance
-where distance_rank = 1
+order by distance_rank asc

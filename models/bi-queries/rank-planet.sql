@@ -23,5 +23,5 @@ rank_table as (
 select
     *
 from rank_table
-where habitability_ranking <= 10
+where habitable_score >= 2
 order by habitability_ranking

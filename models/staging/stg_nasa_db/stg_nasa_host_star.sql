@@ -18,9 +18,9 @@ source as (
 define_star_type as (
     select
         *,
-        substring(source.star_type, 1, 1) as spectral_type, 
-        upper(REGEXP_SUBSTR(star_type, '[A-Z a-z]+', 2)) as luminosity_class,
-        REGEXP_SUBSTR(star_type, '[0-9 .]+', 2) as subclass
+        trim(upper(substring(source.star_type, 1, 1))) as spectral_type, 
+        trim(upper(REGEXP_SUBSTR(star_type, '[A-Z a-z]+', 2))) as luminosity_class,
+        trim(REGEXP_SUBSTR(star_type, '[0-9 .]+', 2)) as subclass
     from source
 ),
 
@@ -59,23 +59,49 @@ fill_null as (
         filter_null.star_id,
         filter_null.star_name,
         ifnull(earth_to_system, m.avg_earth_to_system) as earth_to_system,
-        ifnull(temperature, m.avg_temp) as temperature,
+        ifnull(temperature, 0) as temperature,
         ifnull(radius, m.avg_radius) as radius,
         ifnull(mass, m.avg_mass) as mass,
         ifnull(metalicity, m.avg_metalicity) as metalicity,
         ifnull(luminosity, m.avg_luminosity) as luminosity,
-        ifnull(spectral_type, "None") as spectral_type,
+        ifnull(spectral_type, 'None') as spectral_type,
         ifnull(luminosity_class, "None") as luminosity_class,
         ifnull(SAFE_CAST(subclass AS FLOAT64), 0) as subclass
     from filter_null
     cross join mean_val as m
 ),
 
+fill_spectral as (
+    select
+        star_id,
+        star_name,
+        earth_to_system,
+        temperature,
+        radius,
+        mass,
+        metalicity,
+        luminosity,
+        luminosity_class, 
+        subclass,
+        case
+            when (spectral_type = 'None' or spectral_type = '' or spectral_type is null) and temperature >= 33000 then 'O'
+            when (spectral_type = 'None' or spectral_type = '' or spectral_type is null) and temperature >= 10000 and temperature < 33000 then 'B'
+            when (spectral_type = 'None' or spectral_type = '' or spectral_type is null) and temperature >= 7300 and temperature < 10000 then 'A'
+            when (spectral_type = 'None' or spectral_type = '' or spectral_type is null) and temperature >= 6000 and temperature < 7300 then 'F'
+            when (spectral_type = 'None' or spectral_type = '' or spectral_type is null) and temperature >= 5300 and temperature < 6000 then 'G'
+            when (spectral_type = 'None' or spectral_type = '' or spectral_type is null) and temperature >= 3900 and temperature < 5300 then 'K'
+            when (spectral_type = 'None' or spectral_type = '' or spectral_type is null) and temperature >= 2300 and temperature < 3900 then 'M'
+            when (spectral_type = 'None' or spectral_type = '' or spectral_type is null) and temperature < 2300 then 'Others'
+        else spectral_type
+        end as spectral_type,
+    from fill_null
+),
+
 row_number_table as (
     select
         *,
         row_number() over (partition by star_id order by radius) as row_number
-    from fill_null
+    from fill_spectral
 )
 
 select 
