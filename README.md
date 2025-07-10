@@ -47,4 +47,10 @@ To investigate planetary habitability through the lens of data science—leverag
 
 ![image](https://github.com/user-attachments/assets/b58b1960-a929-4638-9be0-3ea890373c67)
 
+### Dashboarding 
+
+#### OVERVIEW
+![image](https://github.com/user-attachments/assets/21dcb6a4-2e2b-4edf-a71c-f4a1de62044d)
+
+
 
