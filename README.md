@@ -6,9 +6,7 @@
 
 What makes a planet potentially habitable? This question inspired the development of a full end-to-end data science pipeline focused on exoplanets beyond our solar system. 
 
-Starting with publicly available datasets from the NASA Exoplanet Archive API and hzgallery dataset, I built a robust data pipeline to clean, transform, and model planetary features. Using tools like dbt and BigQuery, the raw data was turned into structured insights, enabling deeper analysis of planetary systems.
-
-A Power BI dashboard brought those insights to life, allowing users to explore star systems and identify planets with habitability potential. Finally, I trained classification models that predict whether a planet is potentially habitable, with results that are both interpretable and ready for deployment.
+I used open datasets from the NASA Exoplanet Archive API, HWC and hzgallery dataset. I cleaned and transformed the data to highlight key planetary features. With tools like dbt and BigQuery, I turned raw data into structured insights. Then, I built a Power BI dashboard so users can explore star systems and find planets with habitability potential. I also trained classification models to predict if a planet is potentially habitable. The models are easy to understand and ready for real-world use.
 
 **<ins>Purpose:</ins>**
 To investigate planetary habitability through the lens of data science—leveraging modern tools and best practices in data engineering, analytics, and machine learning to deliver both scientific insight and a scalable prediction system.
@@ -21,7 +19,32 @@ To investigate planetary habitability through the lens of data science—leverag
 **<ins>Tech Stack:</ins>**
 
 * Languages: Python, SQL
-* Tools: dbt, Google BigQuery, Power BI, scikit-learn, XGBoost, APIs (NASA, Asterank)
+* Tools: dbt, Google BigQuery, Power BI, scikit-learn, XGBoost, APIs (NASA Exoplanet Archive)
+
+## DATA OVERVIEW
+
+This project uses three datasets to explore and model planetary habitability beyond our solar system.
+
+### NASA Exoplanet Archive
+
+The core dataset comes from the NASA Exoplanet Archive, a regularly updated source containing confirmed exoplanets and their key properties such as mass, radius, orbital period, and host star characteristics. This dataset serves as the foundation for extracting the most current and relevant planetary data (as of 2024).
+
+### HWC
+
+The HWC dataset is curated by the Planetary Habitability Laboratory (PHL), also based on NASA data. It includes a list of potentially habitable exoplanets that have been manually reviewed and labeled as “Optimistic” or “Conservative”, based on how closely they align with Earth's known conditions. This dataset provides clear labels that support supervised machine learning and model evaluation.
+
+### HZGallery
+
+HZGallery provides detailed calculations of habitable zones for various star systems, helping identify whether a planet lies within the conservative or optimistic habitable zone. This is used to assign weightings to features such as stellar flux, distance to star, and equilibrium temperature — all of which contribute to scoring and labeling planetary habitability.
+
+### Why combine HWC and HZGallery?
+
+The HWC catalog provides expert-labeled planets as Conservative or Optimistic, making it ideal for training supervised models. However, it covers only a small subset of known exoplanets. The HZGallery dataset offers physics-based calculations of habitable zones for thousands of systems, allowing us to label additional planets based on their position relative to these zones.
+
+By combining both, we:
+* Use HWC as a reliable training set
+* Extend labels to more planets using HZGallery
+* Build a scalable and scientifically grounded habitability model
 
 ## PHASE 1: PLANNING
 ### Flowchart
