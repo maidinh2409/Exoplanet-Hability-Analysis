@@ -121,6 +121,26 @@ Performed feature engineering, such as:
 
 ### BUSINESS INTELLIGENCE WITH POWER BI
 
+#### 🔍 Field & Term Explanations
+
+| Field/Label                   | Explanation |
+|------------------------------|-------------|
+| **E. Temp (°C)**             | *Equilibrium Temperature*: Estimated surface temperature of the planet assuming no atmospheric effects. |
+| **Density**                  | Average density of the planet in g/cm³, used to infer its composition (e.g., rocky, gaseous). |
+| **Period**                   | Orbital period: how long the planet takes to complete one orbit around its host star (in Earth days). |
+| **ESI (Earth Similarity Index)** | Score from 0 to 100 indicating how similar a planet is to Earth in terms of physical conditions. |
+| **Spectral Type (M, K, G)**  | Stellar classification based on temperature and light:  
+- **M**: red dwarfs, small and cool, most common  
+- **K**: orange stars, warmer than M-type  
+- **G**: yellow stars like the Sun |
+| **Optimistic / Conservative** | Labels from the HWC dataset representing habitability likelihood:  
+- **Optimistic**: broader zone, more relaxed criteria (water worlds or mini-Neptunes, with a lower likelihood of habitable conditions)
+- **Conservative**: stricter criteria, closer match to Earth conditions (rocky planets capable of surface liquid water)  |
+| **Habitable Planet**         | A planet labeled as potentially habitable based on zone location and planetary features. |
+| **Most Potential World**     | Planet with the highest Earth Similarity Index (ESI). |
+| **Closest Habitable World**  | Nearest planet to Earth that meets habitability criteria. |
+| **Top Facilities**           | Major observatories or missions that discovered the planets (e.g., Kepler, K2, MEarth). |
+
 #### OVERVIEW DASHBOARD
 ![image](https://github.com/user-attachments/assets/21dcb6a4-2e2b-4edf-a71c-f4a1de62044d)
 
