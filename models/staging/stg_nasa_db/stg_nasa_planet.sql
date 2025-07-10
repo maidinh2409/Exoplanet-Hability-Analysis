@@ -14,13 +14,17 @@ source as (
         nasa.pl_dens as density,
         nasa.pl_eqt as t_eq,
         nasa.pl_insol as flux,
-        nasa.pl_orbsmax as distance_to_star,
+        case
+            when nasa.pl_orbsmax > 1000 then nasa.pl_orbsmax/1000
+            when nasa.pl_orbsmax <= 1000 then nasa.pl_orbsmax
+        end as distance_to_star,
         nasa.pl_orbper as period,
         cast(null as INTEGER) as habitable_score
     from {{ref("raw_nasa_db")}} as nasa
     left join {{ref("stg_nasa_host_star")}} as hoststar on hoststar.star_id = nasa.star_id
     left join {{ref("stg_nasa_detection_fact")}} as detection on detection.detection_id = nasa.detection_id
 ),
+
 
 /*Compute mean value for age column to fill null values */
 mean_val as (
