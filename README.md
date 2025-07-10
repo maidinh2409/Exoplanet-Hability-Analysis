@@ -70,9 +70,75 @@ By combining both, we:
 
 ![image](https://github.com/user-attachments/assets/b58b1960-a929-4638-9be0-3ea890373c67)
 
-### Dashboarding 
+## PHASE 2: DATA EXTRACTION & LOADING TO GOOGLE BIG QUERY
 
-#### OVERVIEW
+In this phase, I used Python to extract data from the NASA Exoplanet Archive API, selecting only the necessary features based on a predefined data schema. The extracted data was saved as JSON files to Google Cloud Storage (GCS). I also uploaded the HZGallery and HWC datasets (in CSV format) to GCS. Next, I defined table schemas and created structured tables in Google BigQuery for each dataset, preparing them for transformation.
+
+## PHASE 3: DATA TRANSFORMATION & RE-LOADING BY DBT
+
+In this phase, I used dbt (data build tool) to transform the raw datasets into clean, structured models ready for analysis and machine learning. The transformation followed the standard ELT (Extract–Load–Transform) pipeline using BigQuery as the data warehouse.
+
+🔹 Extract (E):
+
+Queried all raw data directly from BigQuery tables, including:
+
+* NASA Exoplanet Archive
+* HZGallery dataset
+* HWC (Habitable World Catalog)
+
+🔹 Transform (T):
+Data transformations were structured into dbt model layers, each with a clear purpose:
+
+1. Raw Models
+
+* Ingested raw data as-is
+* Standardized formatting (e.g., date, boolean, number)
+* Created composite keys: planet_id, star_id, facility_id, detection_id using concatenation of relevant columns
+
+2. Staging Models
+
+Cleaned noisy data:
+
+* Removed nulls, duplicates, and outliers
+* Handled inconsistent values and type mismatches
+
+Renamed and standardized column names for consistency
+
+3. Intermediate Models
+
+Performed feature engineering, such as:
+
+* Calculated Earth Similarity Index (ESI) for NASA planets
+* Categorized planets in HZGallery as Optimistic or Conservative based on the percentage of orbital overlap with habitable zones
+
+4. Fact Models
+
+* Joined the NASA, HZGallery, and HWC datasets using shared IDs
+* Created final habitability labels
+* Computed a composite habitability score using weighted logic:
+  - HWC label weight = 2 (due to expert-reviewed nature)
+  - HZGallery label weight = 1 (based on physical model calculations)
+
+5. BI Queries
+
+* Built curated queries and views to support Power BI dashboards
+* Pre-aggregated key metrics for performance
+
+6. YAML + Tests
+
+* Defined dbt schema.yml files
+* Wrote unit tests for complex logic such as: ID generation, CASE WHEN conditions, Multi-column concatenation
+* Ensured data integrity across models with dbt’s built-in testing framework
+
+🔹 Load (L):
+
+Final transformed tables were materialized as BigQuery views or tables, organized by layer and optimized for downstream analytics and machine learning workflows.
+
+## PHASE 4: PRODUCT DEPLOYMENT
+
+### BUSINESS INTELLIGENCE WITH POWER BI
+
+#### OVERVIEW DASHBOARD
 ![image](https://github.com/user-attachments/assets/21dcb6a4-2e2b-4edf-a71c-f4a1de62044d)
 
 
