@@ -78,15 +78,6 @@ In this phase, I used Python to extract data from the NASA Exoplanet Archive API
 
 In this phase, I used dbt (data build tool) to transform the raw datasets into clean, structured models ready for analysis and machine learning. The transformation followed the standard ELT (Extract–Load–Transform) pipeline using BigQuery as the data warehouse.
 
-🔹 Extract (E):
-
-Queried all raw data directly from BigQuery tables, including:
-
-* NASA Exoplanet Archive
-* HZGallery dataset
-* HWC (Habitable World Catalog)
-
-🔹 Transform (T):
 Data transformations were structured into dbt model layers, each with a clear purpose:
 
 1. Raw Models
@@ -97,12 +88,8 @@ Data transformations were structured into dbt model layers, each with a clear pu
 
 2. Staging Models
 
-Cleaned noisy data:
-
-* Removed nulls, duplicates, and outliers
-* Handled inconsistent values and type mismatches
-
-Renamed and standardized column names for consistency
+* Cleaned noisy data: Removed nulls, duplicates, and outliers. Handled inconsistent values and type mismatches
+* Renamed and standardized column names for consistency
 
 3. Intermediate Models
 
@@ -129,10 +116,6 @@ Performed feature engineering, such as:
 * Defined dbt schema.yml files
 * Wrote unit tests for complex logic such as: ID generation, CASE WHEN conditions, Multi-column concatenation
 * Ensured data integrity across models with dbt’s built-in testing framework
-
-🔹 Load (L):
-
-Final transformed tables were materialized as BigQuery views or tables, organized by layer and optimized for downstream analytics and machine learning workflows.
 
 ## PHASE 4: PRODUCT DEPLOYMENT
 
