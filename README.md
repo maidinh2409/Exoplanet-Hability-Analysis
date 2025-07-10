@@ -125,7 +125,7 @@ Performed feature engineering, such as:
 
 | Field/Label                   | Explanation |
 |------------------------------|-------------|
-| **E. Temp (°C)**             | *Equilibrium Temperature*: Estimated surface temperature of the planet assuming no atmospheric effects. |
+| **E. Temp (°C)**             | Estimated surface temperature of the planet assuming no atmospheric effects. |
 | **Density**                  | Average density of the planet in g/cm³, used to infer its composition (e.g., rocky, gaseous). |
 | **Period**                   | Orbital period: how long the planet takes to complete one orbit around its host star (in Earth days). |
 | **ESI (Earth Similarity Index)** | Score from 0 to 100 indicating how similar a planet is to Earth in terms of physical conditions. |
@@ -135,7 +135,7 @@ Performed feature engineering, such as:
 | **Closest Habitable World**  | Nearest conservative planet to Earth. |
 | **Top Facilities**           | Major observatories or missions that discovered the planets (e.g., Kepler, K2, MEarth). |
 
-#### OVERVIEW DASHBOARD
+####  📊 OVERVIEW DASHBOARD
 ![image](https://github.com/user-attachments/assets/21dcb6a4-2e2b-4edf-a71c-f4a1de62044d)
 
 
