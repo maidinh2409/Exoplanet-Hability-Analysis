@@ -6,7 +6,7 @@
 
 What makes a planet potentially habitable? This question inspired the development of a full end-to-end data science pipeline focused on exoplanets beyond our solar system. 
 
-Starting with publicly available datasets from the NASA Exoplanet Archive and Asterank API, I built a robust data pipeline to clean, transform, and model planetary features. Using tools like dbt and BigQuery, the raw data was turned into structured insights, enabling deeper analysis of planetary systems.
+Starting with publicly available datasets from the NASA Exoplanet Archive API and hzgallery dataset, I built a robust data pipeline to clean, transform, and model planetary features. Using tools like dbt and BigQuery, the raw data was turned into structured insights, enabling deeper analysis of planetary systems.
 
 A Power BI dashboard brought those insights to life, allowing users to explore star systems and identify planets with habitability potential. Finally, I trained classification models that predict whether a planet is potentially habitable, with results that are both interpretable and ready for deployment.
 
@@ -28,7 +28,7 @@ To investigate planetary habitability through the lens of data science—leverag
 
 🔹 <ins>Stage 1: Data Ingestion & Storage</ins>
 
-* Retrieved raw planetary data from two public sources: Asterank API (Kepler) and NASA Exoplanet Archive using Python scripts.
+* Retrieved raw planetary data from two public sources: NASA API using Python scripts.
 * Designed a structured schema and uploaded the raw data to Google Cloud Storage, preparing it for scalable analysis.
 
 🔹 <ins>Stage 2: ELT Pipeline & Data Transformation</ins>
