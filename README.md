@@ -29,7 +29,7 @@ This project uses three datasets to explore and model planetary habitability bey
 
 The core dataset comes from the NASA Exoplanet Archive, a regularly updated source containing confirmed exoplanets and their key properties such as mass, radius, orbital period, and host star characteristics. This dataset serves as the foundation for extracting the most current and relevant planetary data (as of 2024).
 
-### HWC
+### HWC (Habitable World Catalog)
 
 The HWC dataset is curated by the Planetary Habitability Laboratory (PHL), also based on NASA data. It includes a list of potentially habitable exoplanets that have been manually reviewed and labeled as “Optimistic” or “Conservative”, based on how closely they align with Earth's known conditions. This dataset provides clear labels that support supervised machine learning and model evaluation.
 
