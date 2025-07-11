@@ -121,7 +121,10 @@ Performed feature engineering, such as:
 
 ### BUSINESS INTELLIGENCE WITH POWER BI
 
-#### 🔍 Field & Term Explanations
+####  📊 OVERVIEW DASHBOARD
+![image](https://github.com/user-attachments/assets/21dcb6a4-2e2b-4edf-a71c-f4a1de62044d)
+
+🔍 Field & Term Explanations
 
 | Field/Label                   | Explanation |
 |------------------------------|-------------|
@@ -135,11 +138,9 @@ Performed feature engineering, such as:
 | **Closest Habitable World**  | Nearest conservative planet to Earth. |
 | **Top Facilities**           | Major observatories or missions that discovered the planets (e.g., Kepler, K2, MEarth). |
 
-####  📊 OVERVIEW DASHBOARD
-![image](https://github.com/user-attachments/assets/21dcb6a4-2e2b-4edf-a71c-f4a1de62044d)
-
 ####  📊 FEATURE ANALYSIS DASHBOARD
-<img width="1278" height="728" alt="image" src="https://github.com/user-attachments/assets/a482751a-e38e-4624-ae7a-2e002328c825" />
+<img width="1150" height="655" alt="image" src="https://github.com/user-attachments/assets/603a1ee9-d984-422a-9bd9-77e28651d9cf" />
+
 
 
 
