@@ -141,6 +141,14 @@ Performed feature engineering, such as:
 ####  📊 FEATURE ANALYSIS DASHBOARD
 <img width="1150" height="655" alt="image" src="https://github.com/user-attachments/assets/603a1ee9-d984-422a-9bd9-77e28651d9cf" />
 
+🔍 Field & Term Explanations
 
+| Term                     | Description                                                                                 | Unit / Scale            |
+|--------------------------|---------------------------------------------------------------------------------------------|--------------------------|
+| **Planet Orbit**         | Semi-major axis – the average distance between a planet and its host star                  | Astronomical Units (AU) |
+| **Star Luminosity**      | Total energy output of the star per second                                                  | Log scale (L☉ = 0)      |
+| **Star Temperature**     | Surface temperature of the star                                                             | Kelvin (K)              |
+| **Planet Flux**          | Amount of stellar energy received per unit area on the planet                              | Normalized (Earth = 1)  |
+| **Planet Density**       | Average mass per unit volume of the planet                                                 | g/cm³                   |
 
 
