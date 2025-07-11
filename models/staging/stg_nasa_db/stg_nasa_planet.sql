@@ -33,7 +33,7 @@ mean_val as (
         avg(mass) as mean_mass,
         avg(radius) as mean_radius,
         avg(density) as mean_density,
-        avg(t_eq) as mean_t_eq,
+        APPROX_QUANTILES(t_eq, 2)[OFFSET(1)] AS median_t_eq,
         avg(flux) as mean_flux,
         avg(distance_to_star) as mean_distance,
         avg(period) as mean_period
@@ -54,7 +54,7 @@ fill_null_age as (
         ifnull(s.mass, m.mean_mass) as mass,
         ifnull(s.radius, m.mean_radius) as radius,
         ifnull(s.density, m.mean_density) as density,
-        ifnull(s.t_eq, m.mean_t_eq) as t_eq,
+        ifnull(s.t_eq, m.median_t_eq) as t_eq,
         ifnull(s.flux, m.mean_flux) as flux,
         ifnull(s.distance_to_star, m.mean_distance) as distance_to_star,
         ifnull(s.period, m.mean_period) as period,
