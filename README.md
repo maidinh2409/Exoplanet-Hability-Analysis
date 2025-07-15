@@ -105,7 +105,6 @@ Performed feature engineering, such as:
 * Computed a composite habitability score using weighted logic:
   - HWC label weight = 2 (due to expert-reviewed nature)
   - HZGallery label weight = 1 (based on physical model calculations)
-
 ### 5. BI Queries
 
 * Built curated queries and views to support Power BI dashboards
@@ -139,7 +138,8 @@ Performed feature engineering, such as:
 | **Top Facilities**           | Major observatories or missions that discovered the planets (e.g., Kepler, K2, MEarth). |
 
 ####  📊 FEATURE ANALYSIS DASHBOARD
-<img width="1150" height="655" alt="image" src="https://github.com/user-attachments/assets/603a1ee9-d984-422a-9bd9-77e28651d9cf" />
+
+![image](https://github.com/user-attachments/assets/34af6846-250a-4dd0-809b-3fff81f22704)
 
 🔍 Field & Term Explanations
 
