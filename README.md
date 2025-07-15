@@ -143,8 +143,8 @@ Performed feature engineering, such as:
 
 🔍 Field & Term Explanations
 
-| Term                     | Description                                                                                 | Unit / Scale            |
-|--------------------------|---------------------------------------------------------------------------------------------|--------------------------|
+| Term                     | Description                                                                                 |
+|--------------------------|---------------------------------------------------------------------------------------------|
 | **Planet Orbit**         | Semi-major axis – the average distance between a planet and its host star                  |
 | **Star Luminosity**      | Total energy output of the star per second                                                  |
 | **Star Temperature**     | Surface temperature of the star                                                               |
