@@ -145,10 +145,17 @@ Performed feature engineering, such as:
 
 | Term                     | Description                                                                                 | Unit / Scale            |
 |--------------------------|---------------------------------------------------------------------------------------------|--------------------------|
-| **Planet Orbit**         | Semi-major axis – the average distance between a planet and its host star                  | Astronomical Units (AU) |
-| **Star Luminosity**      | Total energy output of the star per second                                                  | Log scale (L☉ = 0)      |
-| **Star Temperature**     | Surface temperature of the star                                                             | Kelvin (K)              |
-| **Planet Flux**          | Amount of stellar energy received per unit area on the planet                              | Normalized (Earth = 1)  |
-| **Planet Density**       | Average mass per unit volume of the planet                                                 | g/cm³                   |
+| **Planet Orbit**         | Semi-major axis – the average distance between a planet and its host star                  |
+| **Star Luminosity**      | Total energy output of the star per second                                                  |
+| **Star Temperature**     | Surface temperature of the star                                                               |
+| **Planet Flux**          | Amount of stellar energy received per unit area on the planet                              |
+| **Planet Density**       | Average mass per unit volume of the planet                                                 |
 
+#### KEY INSIGHTS:
 
+* According to major research, M-type stars (red dwarfs) are the most common in the universe. However, analysis of NASA's exoplanet database shows G-type stars (like the Sun) dominate the dataset—likely because missions like Kepler focus on finding Earth-like planets around Sun-like stars.
+* M-type stars account for the highest share of optimistic planets (56% of all optimistic + conservative planets orbit M-type stars). However, their conservative-to-optimistic ratio is lower than K-type stars, likely because their close-in habitable zones cause many planets to become tidally locked—with one side permanently facing the star, creating extreme climates that limit strict habitability.
+* Most optimistic and conservative planets cluster around 200–300 K, supporting the possibility of liquid water.
+* Pessimistic planets dominate edge conditions: extreme stellar flux, very low/high luminosity, and unstable orbits.
+* In contrast, optimistic and conservative planets concentrate in a moderate, balanced zone in terms of star luminosity, stellar flux, orbital distance, and planetary density.
+* Finally, star characteristics, especially luminosity and temperature, play a critical role in whether planets fall within habitable zones.
