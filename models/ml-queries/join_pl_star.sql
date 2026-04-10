@@ -11,7 +11,6 @@ join_table as (
         pl.flux,
         pl.distance_to_star,
         pl.period,
-        pl.esi,
         pl.habitable_score,
         star.star_name,
         star.temperature,
